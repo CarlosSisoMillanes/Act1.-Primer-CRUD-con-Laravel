@@ -3,12 +3,13 @@
     
     <form method="POST" action="{{ route('pokemons.store') }}">
         @csrf
-
+        <!-- Opción para añadir el nombre -->
         <div class="form-group">
             <label for="nombre">Nombre:</label>
             <input type="text" name="nombre" class="form-control" value="{{ old('nombre') }}" required>
         </div>
 
+        <!-- Opción para añadir el tipo con un desplegable -->
         <div class="form-group">
             <label for="tipo">Tipo:</label>
             <select name="tipo" class="form-control" required>
@@ -33,6 +34,7 @@
             </select>
         </div>
 
+        <!-- Opción para añadir el tamaño con un desplegable -->
         <div class="form-group">
             <label for="tamaño">Tamaño:</label>
             <select name="tamaño" class="form-control" required>
@@ -42,6 +44,7 @@
             </select>
         </div>
 
+        <!-- Opción para añadir el peso con un desplegable -->
         <div class="form-group">
             <label for="peso">Peso:</label>
             <input type="number" step="0.01" name="peso" class="form-control" value="{{ old('peso') }}" required>

@@ -4,12 +4,14 @@
     <form method="POST" action="{{ route('pokemons.update', $pokemon->id) }}">
         @csrf
         @method('PUT')
-
+        
+        <!-- Opción para editar el nombre -->
         <div class="form-group">
             <label for="nombre">Nombre:</label>
             <input type="text" name="nombre" class="form-control" value="{{ old('nombre', $pokemon->nombre) }}" required>
         </div>
 
+            <!-- Opción para editar el tipo con un desplegable -->
             <label for="tipo">Tipo:</label>
             <select name="tipo" class="form-control" required>
                 <option value="acero">Acero</option>
@@ -32,7 +34,7 @@
                 <option value="planta">Planta</option>
             </select>
 
-        
+            <!-- Opción para editar el tamaño con un desplegable -->
             <label for="tamaño">Tamaño:</label>
             <select name="tamaño" class="form-control" required>
                 <option value="pequeño">Pequeño</option>
@@ -40,6 +42,7 @@
                 <option value="grande">Grande</option>
             </select>
 
+        <!-- Opción para editar el peso -->
         <div class="form-group">
             <label for="peso">Peso:</label>
             <input type="number" step="0.01" name="peso" class="form-control" value="{{ old('peso', $pokemon->peso) }}" required>
